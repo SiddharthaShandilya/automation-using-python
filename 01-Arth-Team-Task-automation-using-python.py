@@ -1,17 +1,27 @@
 import os
 
-def service(ch):
-        while( exitStatus != "y"):
-            ck = input(" \t Enter 1 to start the docker \n\t
-                Enter 2 to stop the docker \n\t
-                Enter 3 to know the status of docker \n\t
-                Enter 4 for running an image \n\t Enter 5 for pulling an image \n \t
-                Enter 99 to exit \n")
-            ch = int(ck)
+def option():
+    ck = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t\n")
+    ch = int(ck)
+    return ch
+
+def Rechoice():
+    reChoice = input("you have exitted from the service Enter R to re-enter")
+    if(reChoice == 'R' ):
+            service()
+    else:
+            print("you have choosen to withdraw \n \t\tHAPPY CODING")
+           
+
+def service():
+        exitStatus = "dumycode"
+        while( exitStatus != "N"):
+            ch = option()
             if(ch == 1):
+                    print("\t \t Starting Docker \t\t\n")
                     os.system("systemctl start docker")
             elif(ch == 2):
-                
+                print("stopping docker")
                 os.system("systemctl stop docker")
             elif(ch == 3):
                 os.system("systemctl status docker")
@@ -30,28 +40,13 @@ def service(ch):
             else:
                     print("You have entered wrong choice")
             
-            exitStatus = input("Do you want to continue [y/n] \t")
+            exitStatus = input("Enter y to continue and N  to exit [y/n] \t")
         
-        
-            
-            
-
-def option():
-    ck = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t Enter 99 to exit \n")
-    ch = int(ck)
-    return ch
-def Rechoice():
-    reChoice = input("you have exitted from the service Enter R to re-enter")
-    if(reChoice == 'R' ):
-            service(option())
-    else:
-            print("HAPPY CODING")
-            exit()
-            
-print("\t Welcome to dockers below are the list of options to use docker \t!!")
 
 
-service(option())
-Rechoice()
+def docker():
+    print("\t Welcome to dockers below are the list of options to use docker \t!!")
+    service()
+    Rechoice()
 
-
+docker()
