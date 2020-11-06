@@ -51,5 +51,6 @@ def docker():
     print("\t Welcome to dockers below are the list of options to use docker \t!!")
     service()
     Rechoice()
-
+# ------>>>>    docker() is the main function which gets the whole process rolling it will call the service() and Rechoice() at the end of the function 
+# --------------------->>>>>>>>> During merging with the menu program simply call the docker() function and the rest will be solved
 docker()
