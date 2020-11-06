@@ -1,28 +1,41 @@
 import os
+def option():
+    choice = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t\n")
+#    ch = int(choice)
+    return choice
 
-def service(ch):
-        while( exitStatus != "y"):
-            ck = input(" \t Enter 1 to start the docker \n\t
-                Enter 2 to stop the docker \n\t
-                Enter 3 to know the status of docker \n\t
-                Enter 4 for running an image \n\t Enter 5 for pulling an image \n \t
-                Enter 99 to exit \n")
-            ch = int(ck)
-            if(ch == 1):
+def Rechoice():
+    reChoice = input("you have exitted from the service Enter R to re-enter and E to exit")
+    if(reChoice == 'R' ):
+            service()
+    elif(reChoice == 'E'):
+            print("you have choosen to withdraw \n \t\tHAPPY CODING")
+            
+    else:
+        print("\t\t\t !!!    EXITING !!!!!!!")
+        exit()
+            
+
+def service():
+        exitStatus = "dumycode"
+        while( exitStatus != "n"):
+            ch = option()
+            if(ch == "1"):
+                    print("\t \t Starting Docker \t\t\n")
                     os.system("systemctl start docker")
-            elif(ch == 2):
-                
+            elif(ch == "2"):
+                print("stopping docker")
                 os.system("systemctl stop docker")
-            elif(ch == 3):
+            elif(ch == "3"):
                 os.system("systemctl status docker")
-            elif(ch == 4):
+            elif(ch == "4"):
 
                 # ==========>>>>>>> here we will ask the user details about the image it wants to run
                 print("you have chosen option 4\n")
                 
 
 
-            elif(ch == 5):
+            elif(ch == "5"):
                 # ==================>>>>>>>>Here we will ask the user details about the image it wants to pull
 
                     imgPull = input("Please input the name of the image  ")
@@ -30,28 +43,13 @@ def service(ch):
             else:
                     print("You have entered wrong choice")
             
-            exitStatus = input("Do you want to continue [y/n] \t")
+            exitStatus = input("Enter y to continue and N  to exit [y/n] \t")
         
-        
-            
-            
-
-def option():
-    ck = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t Enter 99 to exit \n")
-    ch = int(ck)
-    return ch
-def Rechoice():
-    reChoice = input("you have exitted from the service Enter R to re-enter")
-    if(reChoice == 'R' ):
-            service(option())
-    else:
-            print("HAPPY CODING")
-            exit()
-            
-print("\t Welcome to dockers below are the list of options to use docker \t!!")
 
 
-service(option())
-Rechoice()
+def docker():
+    print("\t Welcome to dockers below are the list of options to use docker \t!!")
+    service()
+    Rechoice()
 
-
+docker()
