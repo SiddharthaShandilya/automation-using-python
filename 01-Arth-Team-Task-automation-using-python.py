@@ -1,38 +1,41 @@
 import os
-
 def option():
-    ck = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t\n")
-    ch = int(ck)
-    return ch
+    choice = input(" \t Enter 1 to start the docker \n \t Enter 2 to stop the docker \n \t Enter 3 to know the status of docker \n \t  Enter 4 for running an image \n \t  Enter 5 for pulling an image \n \t\n")
+#    ch = int(choice)
+    return choice
 
 def Rechoice():
-    reChoice = input("you have exitted from the service Enter R to re-enter")
+    reChoice = input("you have exitted from the service Enter R to re-enter and E to exit")
     if(reChoice == 'R' ):
             service()
-    else:
+    elif(reChoice == 'E'):
             print("you have choosen to withdraw \n \t\tHAPPY CODING")
-           
+            
+    else:
+        print("\t\t\t !!!    EXITING !!!!!!!")
+        exit()
+            
 
 def service():
         exitStatus = "dumycode"
-        while( exitStatus != "N"):
+        while( exitStatus != "n"):
             ch = option()
-            if(ch == 1):
+            if(ch == "1"):
                     print("\t \t Starting Docker \t\t\n")
                     os.system("systemctl start docker")
-            elif(ch == 2):
+            elif(ch == "2"):
                 print("stopping docker")
                 os.system("systemctl stop docker")
-            elif(ch == 3):
+            elif(ch == "3"):
                 os.system("systemctl status docker")
-            elif(ch == 4):
+            elif(ch == "4"):
 
                 # ==========>>>>>>> here we will ask the user details about the image it wants to run
                 print("you have chosen option 4\n")
                 
 
 
-            elif(ch == 5):
+            elif(ch == "5"):
                 # ==================>>>>>>>>Here we will ask the user details about the image it wants to pull
 
                     imgPull = input("Please input the name of the image  ")
