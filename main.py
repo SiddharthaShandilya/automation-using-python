@@ -1,5 +1,6 @@
 import os
 import Docker_automation as da
+import WebServer_automation as wsa
 import Linux_Automation as la
 import Hadoop_Automation as ha
 import Machine_Learning as ml
@@ -23,14 +24,14 @@ Press  4: To configure yum
 Press  5: To configure apache web server
 Press  6: To create a Lvm Storage
 """
-    
+
     exitStatus = 'yes'
     while(exitStatus == 'yes'):
         print(m)
 
         ch = input("Input Your Choice: ")
         if (ch == '1'):
-           la.create_partition()
+            la.create_partition()
 
         elif(ch == '2'):
             la.format_disk()
@@ -49,12 +50,10 @@ Press  6: To create a Lvm Storage
 
         else:
             print("\n\t\tYOU HAVE ENTERED WRONG OPTION \n")
-        
+
         exitStatus = input("\n\t\tDO YOU WANT TO CONTINUE [yes/no]\t:  ")
 
     return
-    
-    
 
 
 def configureAWS():
@@ -83,10 +82,10 @@ press  4: To Install Hadoop on the system
             ha.create_namenode_hadoop()
 
         elif(ch == '2'):
-           ha.create_datanode_hadoop()
+            ha.create_datanode_hadoop()
 
         elif(ch == '3'):
-          ha.create_hadoop_client()
+            ha.create_hadoop_client()
 
         elif(ch == '4'):
             ha.install_hadoop()
@@ -97,7 +96,6 @@ press  4: To Install Hadoop on the system
         exitStatus = input("\n\t\tDO YOU WANT TO CONTINUE [yes/no]\t:  ")
 
     return
-    
 
 
 def useMachineLearning():
@@ -114,6 +112,7 @@ Press  2: To Configure AWS
 Press  3: To Configure Docker
 Press  4: To configure Hadoop
 Press  5: To use Machine Learning
+Press  6: To Configure Web Server
 """
     print("\n\n\t\t\t\t MAIN MENU \n\n\n")
     exitStatus = 'yes'
@@ -122,7 +121,7 @@ Press  5: To use Machine Learning
         print(m)
         ch = input("Input Your Choice: ")
         if ch == '1':
-           configureLinux()
+            configureLinux()
 
         elif(ch == '2'):
             configureAWS()
@@ -134,16 +133,19 @@ Press  5: To use Machine Learning
             configureHadoop()
 
         elif(ch == '5'):
-          useMachineLearning()
+            useMachineLearning()
+
+        elif(ch == '6'):
+            wsa.menu()
+            #this menu will take the user to the Webserver_automation.py file
 
         else:
             print("\n\t\tYOU HAVE ENTERED WRONG OPTION \n")
-    
-        exitStatus = input("\n\t\tDO YOU WANT TO Restart MAIN MENU [yes/no]\t:  ")
+
+        exitStatus = input(
+            "\n\t\tDO YOU WANT TO Restart MAIN MENU [yes/no]\t:  ")
 
     return
-
-    
 
 
 print("Do you want to run? Local/Remote")
