@@ -18,7 +18,6 @@ we are using python to automate docker , Hadoop , AWS, Linux.The real motive beh
 - [Installation](#installation)
 - [Recommended configurations](#recommended-configurations)
 - [Custom configurations](#custom-configurations)
-- [Updating](#updating)
 - [Uninstallation](#uninstallation)
 - [Contributing](#contributing)
 - [Future Scope](#future-scope)
@@ -110,7 +109,7 @@ For more details 👉 [(click here)](http://confusedprogrammer.unaux.com/2021/09
 5. Activate the virtual env: 👉 [(click Here)](https://www.programshelp.com/help/python/activate_virtual_environment_python_windows_10.html)
 6. Install all the libraries as well as software for the application.Do download Docker, Hadoop, AWS.
 
-6. Have a look at [Recommended configurations](#recommended-configurations) and [Custom configurations](#custom-configurations).
+6. Have a look at [Recommended configurations](#recommended-configurations) and [Custom configurations](#custom-configurations). 
 
 
 </br></br>
@@ -120,22 +119,29 @@ For more details 👉 [(click here)](http://confusedprogrammer.unaux.com/2021/09
 
 [(Back to top)](#table-of-contents)
 
-Download the following software: Docker
-<!--
+1. Update yum/dnf repository for downloading the required software.
 
-1. To add some short command (say, `lc`) with some flag options (say, `-l`, `-A`, `--sd`) by default, add this to your shell configuration file (`~/.bashrc`, `~/.zshrc`, etc.) :
-    ```sh
-    alias lc='colorls -lA --sd'
-    ```
+```bash
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
+2. After Downloading the repo update it.
 
-2. For changing the icon(s) to other unicode icons of choice (select icons from [here](https://nerdfonts.com/)), change the YAML files in a text editor of your choice (say, `subl`)
+ ```sh 
+ sudo dnf update
+```
+3. Install Docker : ```bash sudo dnf install docker ```
 
-    ```sh
-    subl $(dirname $(gem which colorls))/yaml
-    ```
 
-</br></br>
--->
+4. Install java-8: ```sh dnf install java-1.8.0-openjdk ant -y ```
+
+5. Install Hadoop. For more reference 👉[click here](https://tecadmin.net/install-hadoop-centos-8/)
+
+```sh
+sudo wget http://apachemirror.wuchna.com/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+tar -xvzf hadoop-3.2.1.tar.gz
+```
+6. Install aws-cli: ```sh sudo dnf install awscli  ```
+
 
 # Custom configurations
 
@@ -144,65 +150,13 @@ Download the following software: Docker
 
 you can overwrtite the existng codes and add new features. 
 
-In order to add new features in the application you need to create a seperate file where you can store all the neccessary configuration code.
-<!--
-You can overwrite the existing icons and colors mapping by copying the yaml files from `$(dirname $(gem which colorls))/yaml` into `~/.config/colorls`, and changing them.
+In order to add new features in the application you need to:
 
-- To overwrite color mapping :
+📌create a seperate file where you can store all the neccessary configuration code.
 
-  Please have a look at the [list of supported color names](https://github.com/sickill/rainbow#color-list). You may also use a color hex code as long as it is quoted within the YAML file and prefaced with a `#` symbol.
+📌Make sure to put every task in seperate function.
 
-  Let's say that you're using the dark color scheme and would like to change the color of untracked file (`??`) in the `--git-status` flag to yellow. Copy the defaut `dark_colors.yaml` and change it.
-
-  ```sh
-  cp $(dirname $(gem which colorls))/yaml/dark_colors.yaml ~/.config/colorls/dark_colors.yaml
-  ```
-
-  In the `~/.config/colorls/dark_colors.yaml` file, change the color set for `untracked` from `darkorange` to `yellow`, and save the change.
-
-  ```
-  untracked: yellow
-  ```
-
-  Or, using hex color codes:
-
-  ```
-  untracked: '#FFFF00'
-  ```
-
-- To overwrite icon mapping :
-
-  Please have a look at the [list of supported icons](https://nerdfonts.com/). Let's say you want to add an icon for swift files. Copy the default `files.yaml` and change it.
-
-  ```sh
-  cp $(dirname $(gem which colorls))/yaml/files.yaml ~/.config/colorls/files.yaml`
-  ```
-
-  In the `~/.config/colorls/files.yaml` file, add a new icon / change an existing icon, and save the change.
-
-
-  ```
-  swift: "\uF179"
-  ```
-
-- User contributed alias configurations :
-
-  - [@rjhilgefort](https://gist.github.com/rjhilgefort/51ea47dd91bcd90cd6d9b3b199188c16)
-
--->
-</br></br>
-
-# Updating
-
-[(Back to top)](#table-of-contents)
-
-Want to update to the latest version of `chat_app`?
-
-<!--
-```sh
-gem update colorls
-```
--->
+📌Import the new file name to main.py: ```sh import <new-file-name> ```.
 
 
 </br></br>
@@ -233,9 +187,11 @@ Your contributions are always welcome! Please have a look at the [contribution g
 # Future Scope
 [(Back to top)](#table-of-contents)
 
-Adding Voice chat app will make it more user friendly
-Adding face recognition system will make it more secure.
-Accessing all the file via Web-Browser will allow us to have more better UI.
+📌Adding Voice chat app will make it more user friendly
+
+📌Adding face recognition system will make it more secure.
+
+📌Accessing all the file via Web-Browser will allow us to have more better UI.
 
 
 
