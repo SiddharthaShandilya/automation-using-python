@@ -22,7 +22,6 @@ we are using python to automate docker , Hadoop , AWS, Linux.The real motive beh
 - [Contributing](#contributing)
 - [Future Scope](#future-scope)
 
-</br></br>
 
 # Usage
 
