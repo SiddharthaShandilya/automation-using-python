@@ -156,7 +156,7 @@ In order to add new features in the application you need to:
 
 📌Make sure to put every task in seperate function.
 
-📌Import the new file name to main.py: ```sh import <new-file-name> ```.
+📌Import the new file name to main.py: ``` import <new-file-name> ```.
 
 
 </br></br>
