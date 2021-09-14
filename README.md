@@ -165,24 +165,20 @@ In order to add new features in the application you need to:
 
 [(Back to top)](#table-of-contents)
 
-Want to uninstall and revert back to the old style? No issues (sob). Please feel free to open an issue regarding how we can enhance `chat_app`.
+Want to uninstall and revert back to the old style? No issues (sob). Please feel free to open an issue regarding how we can enhance `automation-using-python app`.
 
-<!--
 ```sh
 rmdir ./automation-using-python
 ```
--->
 
-</br></br>
 
 # Contributing
 
 [(Back to top)](#table-of-contents)
 
-Your contributions are always welcome! Please have a look at the [contribution guidelines](CONTRIBUTING.md) first. :tada:
+Your contributions are always welcome! Please have a look at the code and Treat it like it's yours.
 
 
-</br>
 
 # Future Scope
 [(Back to top)](#table-of-contents)
