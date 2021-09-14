@@ -1,28 +1,5 @@
-<!--
 
-# note: the following code will work only on linux operating system (eg : rhel 8) 
-Language used : python3
-
-# automation-using-python
-we are using python to automate docker , Hadoop , AWS, Linux
-the real motive behind the project is to makeit useful for those who might no be that into the respective technologies but will be able to perform all the basic functions
-
-
-
-# Docker_automation.py
-for automating docker
-
-# Hadoop_Automation.py
-for automating hadoop
-
-# Linux_Automation.py
-for performing basic linux function
-
-# voice_recognition.py
-for using voice to perform the various tasks
-
--->
-
+#note: the following code will work only on linux operating system (eg : rhel 8) 
 
 # Automation-Using-Python
 
@@ -32,8 +9,6 @@ for using voice to perform the various tasks
 
 
 we are using python to automate docker , Hadoop , AWS, Linux.The real motive behind the project is to make it useful for those who might not be that into the respective technologies but will be able to perform all the basic functions.
-
-
 
 
 # Table of contents
@@ -63,14 +38,13 @@ we are using python to automate docker , Hadoop , AWS, Linux.The real motive beh
 👉 Linux
 
 👉 AWS
-
-
 </br>
 
 # Demo
 [(Back to top)](#table-of-contents)
 
 📌 The first Screen.
+
 ![First_image_options](https://media-exp1.licdn.com/dms/image/C4D12AQHWNyU-nS04-g/article-inline_image-shrink_1000_1488/0/1604856609369?e=1637193600&v=beta&t=Rf-2c5Pa36J7Z0eQoRtfLUE6Ds938RLdFMx0YQlS7W4)
 
 _______________________________________________________________________________________________________
@@ -82,7 +56,7 @@ ________________________________________________________________________________
 
 _______________________________________________________________________________________________________
 
-📌 The Another option helps in creating hadoop name and data node.
+📌 Option 7 helps in creating hadoop name node.
 
 ![Name_node](https://media-exp1.licdn.com/dms/image/C4D12AQF5LAp6Nz00KQ/article-inline_image-shrink_1000_1488/0/1604857833063?e=1637193600&v=beta&t=NXIJEI1_umpTJ25l11k8R09xkpaCA8KhEFGKjVB4Xt8)
 
@@ -167,6 +141,10 @@ Download the following software: Docker
 
 [(Back to top)](#table-of-contents)
 
+
+you can overwrtite the existng codes and add new features. 
+
+In order to add new features in the application you need to create a seperate file where you can store all the neccessary configuration code.
 <!--
 You can overwrite the existing icons and colors mapping by copying the yaml files from `$(dirname $(gem which colorls))/yaml` into `~/.config/colorls`, and changing them.
 
